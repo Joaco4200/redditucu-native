@@ -7,9 +7,9 @@ const Header =() =>{
    
     return(
         <View style={styles.container}>
-            <View>
+            <Link href="/">
                 <Text style={styles.title}>UCUDDIT</Text>
-            </View>
+            </Link>
             <View style={styles.buttonContainer}>
                 <Link href="/CreatePostPage" style={styles.button}>
                     +Create

@@ -59,14 +59,16 @@ const SinglePostPage=()=>{
             ) : (
                 <Text>Loading post...</Text>
             )}
-            <TextInput style={styles.textInput}
-                placeholder="Add comment..."
-                value={content}
-                onChangeText={handleContentChange}
-            />
-            <TouchableOpacity style={styles.button} onPress={handleCreateCommentButtonClick}>
-                <Text style={styles.buttonText}>Comment</Text>
-            </TouchableOpacity>
+            <View style={{flexDirection:'row' }}>
+                <TextInput style={styles.textInput}
+                    placeholder="Add comment..."
+                    value={content}
+                    onChangeText={handleContentChange}
+                />
+                <TouchableOpacity style={styles.button} onPress={handleCreateCommentButtonClick}>
+                    <Text style={styles.buttonText}>Comment</Text>
+                </TouchableOpacity>
+            </View>
             <ScrollView style={{marginTop:20}}>
                 {comments.length === 0 ? (
                 <Text style={{color:'#fff'}}>This post has no comments</Text>  
@@ -89,17 +91,16 @@ const styles = StyleSheet.create({
     textInput: {
         borderWidth: 1,
         borderColor: '#ccc',
-        borderRadius: 20,
+        borderRadius: 8,
         padding: 10,
         marginBottom: 10,
-        color:'#fff'
+        color:'#fff',
+        width:200,
+        marginLeft:15
       },
     button: {
         paddingVertical: 10,
         paddingHorizontal: 20,
-        borderRadius: 30,
-        borderColor:'#fff',
-        borderWidth: 1,
         alignItems: 'center',
       },
     buttonText: {
